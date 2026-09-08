@@ -1,0 +1,40 @@
+[TEMPLATE / EXAMPLE - NOT A REAL COMPETITION SOLVE]
+This file illustrates the required .txt write-up format only. It does not
+describe a real "What The Flag" challenge, and the flag value below is a
+placeholder, not a genuine competition flag.
+
+INITIAL APPROACH
+
+Given a single hex string in message.txt with a hint that it was "XORed
+with something simple." Checked the character set (0-9a-f only, even
+length) and confirmed it was hex-encoded data before assuming it was
+ciphertext outright. Plan: hex-decode first, then treat the result as a
+single-byte XOR candidate and brute-force all 256 possible keys, since the
+challenge flavor text explicitly implied a simple XOR scheme rather than
+real encryption.
+
+STEPS OF RECREATION
+
+1. Ran `file message.txt` - confirmed plain ASCII text containing a hex
+   string.
+2. Hex-decoded the string with `xxd -r -p` into message.bin.
+3. Ran `file message.bin` and `xxd message.bin` - confirmed non-printable
+   binary output, ruling out "already plaintext."
+4. Wrote a short Python script to XOR message.bin against every possible
+   single-byte key (0-255) and print any result where all output bytes
+   were printable ASCII (32-126).
+5. Exactly one key, 0x7e, produced fully printable output:
+   example{xor_is_never_secure_alone}
+6. Re-ran the full command chain against a clean copy of message.txt to
+   confirm the result reproduces identically.
+
+IDENTIFICATION
+
+The recovered string matched this illustrative competition's example flag
+format (example{...}), was produced directly and reproducibly from the
+provided artifact via a documented, deterministic transformation chain
+(hex-decode, then single-byte XOR with key 0x7e), and was the only one of
+256 candidate keys to yield fully printable output - strong confirming
+evidence it is correct rather than coincidental.
+
+Flag: example{xor_is_never_secure_alone} (illustrative placeholder only)
