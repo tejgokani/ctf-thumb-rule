@@ -1,0 +1,24 @@
+# Build outputs
+*.iml
+.gradle/
+build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# IDE
+.idea/
+*.hprof
+
+# OS
+.DS_Store
+
+# Room schema exports (not currently generated; reserved for when they are)
+app/schemas/
+
+# Signing — the keystore itself is intentionally tracked (see SETUP.md's warning about backing
+# it up off-device), but never commit the password used to protect it.
+*.jks.properties
+keystore.properties
