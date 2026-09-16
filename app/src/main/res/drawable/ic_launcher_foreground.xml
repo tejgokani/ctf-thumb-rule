@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Three stacked strata bars in amber, aligned right, brutalist blocks -->
+    <path android:fillColor="#FFB020" android:pathData="M34,40h18v6h-18z" />
+    <path android:fillColor="#FFB020" android:pathData="M34,51h30v6h-30z" />
+    <path android:fillColor="#FFB020" android:pathData="M34,62h24v6h-24z" />
+    <path android:fillColor="#E8E8E3" android:pathData="M28,34h2v40h-2z" />
+</vector>
